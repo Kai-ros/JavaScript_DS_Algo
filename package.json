@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "dependencies": {
+    "@ericchase/binary-tree": "https://github.com/ericchase/modules.git#binary-tree"
+  }
+}
