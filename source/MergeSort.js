@@ -10,9 +10,9 @@ function split(array) {
     let leftSubArray = array.slice(0, midPoint);
     let rightSubArray = array.slice(midPoint);
 
-    mergeSort(leftSubArray);
+    split(leftSubArray);
 
-    mergeSort(rightSubArray);
+    split(rightSubArray);
 
     merge(leftSubArray, rightSubArray, array);
   }
@@ -49,4 +49,3 @@ function merge(arrayLeft, arrayRight, resultArray) {
   }
 }
 
-exports.mergeSort = mergeSort;
