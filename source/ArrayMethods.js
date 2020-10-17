@@ -1,4 +1,83 @@
 
+function isArrayCyclic(array, pos) {
+    if(pos === -1) 
+      return false;
+
+    let hare = 0
+    let tortoise = 0
+
+    for (;; tortoise++) {
+      if (tortoise === array.length - 1) {
+        tortoise = pos
+      }
+
+      hare++
+      if ( hare === array.length - 1) {
+        hare = pos
+      }
+
+      hare++
+      if ( hare === array.length - 1) {
+        hare = pos
+      }
+
+      if (array[hare] === array[tortoise]) {
+        return true
+      }
+    }
+    return false
+}
+
+function formatPhoneNumber(array) {
+    const area_code = array.slice(0,3).join('');
+    const initial_three = array.slice(3,6).join('');
+    const latter_four = array.slice(6,10).join('');
+
+    return `(${area_code}) ${initial_three}-${latter_four}`
+}
+
+// Kadane's Algorithm
+function subArraySum(array) {
+    max = array[0]
+    sum = array[0]
+
+    for (let i = 1; i  < array.length; i++) {
+        sum += array[i]
+        if (sum < array[i]) sum = array[i]
+        if (sum > max) max = sum
+    }
+    
+    return max
+}
+
+// A version of Kadane's Algorithm
+function maxStockProfits(stockPrices, k) {
+    // all possible max profits
+    let profits = [];
+    
+    let max_profit = 0;
+    // profit = sell - buy
+    let buy = stockPrices[0];
+    for(let stock of stockPrices.slice(1)) { 
+        const profit = stock - buy;
+        if(profit > max_profit)
+        {
+            max_profit = profit;
+        } else {
+            // selling here
+            profits.push(max_profit);
+            // reset
+            buy = stock;
+            max_profit = 0;
+        }
+    }
+    profits.push(max_profit);
+
+    return profits
+        .sort((a,b)=> b-a)
+        .slice(0, k)
+        .reduce(((a,b) => a+b), 0);
+}
 
 function arrayPermutations(originArray, destinationArray) {
     //for (let i = 0; i < destinationArray.length; i++) {
@@ -118,3 +197,51 @@ function reverseInPlace(array) {
 }
 
 exports.reverseInPlace = reverseInPlace;
+
+// JS built in methods
+const items = [
+    { name: 'Bike',  price: 100 },
+    { name: 'TV',  price: 200 },
+    { name: 'Album',  price: 10 },
+    { name: 'Book',  price: 5 },
+    { name: 'Phone',  price: 500 },
+    { name: 'Comp',  price: 1000 },
+    { name: 'KB',  price: 25 }
+  ]
+  
+  const filteredItems = items.filter(item => item.price <= 100)
+  const itemNames = items.map(item => item.name)
+  const founditem = items.find(item => item.name === 'KB')
+  const hasCheapItems = items.some(item =>  item.price <= 100)
+  const hasPriceyItems = items.every(item =>  item.price >= 100)
+  const includesKeyboard = items.includes(0)
+  const total = items.reduce((currentTotal, item) => {
+    return item.price + currentTotal
+  }, 0)
+  
+//   console.log('All items: ')
+//   console.log(items)
+  
+//   console.log('Filtered items: ')
+//   console.log(filteredItems)
+  
+//   console.log('Item names: ')
+//   console.log(itemNames)
+  
+//   console.log('Found item: ')
+//   console.log(founditem)
+  
+//   console.log('Has cheap items? ')
+//   console.log(hasCheapItems)
+  
+//   console.log('Has pricey items? ')
+//   console.log(hasPriceyItems)
+  
+//   console.log('Includes Keyboard? ')
+//   console.log(includesKeyboard)
+  
+//   console.log('Total: ')
+//   console.log(total)
+  
+//   items.forEach(item => console.log(item.price))
+  

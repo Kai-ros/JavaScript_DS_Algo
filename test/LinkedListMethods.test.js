@@ -77,7 +77,7 @@ test("find intersection of two lists", () => {
   nodeA.child = nodeB;
   nodeB.child = nodeC;
   nodeC.child = nodeD;
-  nodeD.child = node5;
+  nodeD.child = nodeE;
   nodeE.child;
 
   expect(LinkedList.traverse(handicappedListIntersection(new LinkedList(node1), new LinkedList(nodeA)))).toEqual([3,9,14]);

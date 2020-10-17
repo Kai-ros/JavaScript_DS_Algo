@@ -1,0 +1,22 @@
+a {
+    display: block;
+}
+
+.list-box {
+    color: midnightblue;
+    background-color: darkcyan;
+    margin: 2em;
+    padding: 1em;
+    height: 20em;
+    width: 20em;
+    font-size: 1.5em;
+    box-shadow: 1em 1em 2em black;
+}
+
+#drinks-box {
+    border-style: double;
+}
+
+#foods-box {
+    border-style: inset;
+}

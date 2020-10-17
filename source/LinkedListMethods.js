@@ -1,4 +1,4 @@
-const { LinkedList, Node} = require("./LinkedList.js")
+const { LinkedList, Node } = require("./LinkedList.js")
 
 function makeNodeListHead(linkedList, target) {
     if (typeof linkedList === "undefined") {
@@ -6,7 +6,7 @@ function makeNodeListHead(linkedList, target) {
     }
 
     if (typeof linkedList.head === "undefined") {
-      return linkedList
+        return linkedList
     }
 
     let current = linkedList.head
@@ -31,14 +31,14 @@ function makeNodeListHead(linkedList, target) {
             current.parent = undefined
             linkedList.head = current
         }
-        
+
         previous = current
         current = next
         if (typeof current !== "undefined") {
             next = current.child
         }
     }
-    
+
     return linkedList
 }
 
@@ -52,7 +52,7 @@ function handicappedListIntersection(list1, list2) {
 
     while (current1 !== undefined && current2 !== undefined) {
         if (current1.value === current2.value) {
-            if (currentForIntersection === undefined)  {
+            if (currentForIntersection === undefined) {
                 intersectionRoot = new Node(current2.value) // first node
                 currentForIntersection = intersectionRoot
             } else {
@@ -61,7 +61,7 @@ function handicappedListIntersection(list1, list2) {
             }
             current1 = current1.child
             current2 = current2.child
-        } 
+        }
         else if (current1.value < current2.value) {
             current1 = current1.child
         }
@@ -73,3 +73,25 @@ function handicappedListIntersection(list1, list2) {
 }
 
 exports.handicappedListIntersection = handicappedListIntersection
+
+// Given a sorted linked list, delete all duplicates such that each element appear only once.
+
+function deleteDupes(listHead) {
+    current = listHead
+
+    while (current.next !== undefined) {
+        const next = current.next
+
+        if (current.value === next.value) {
+            current.next = next.next
+            if (current.next !== undefined) {
+                current.next.prev = current
+            }
+        } else {
+            current = next;
+        }
+    }
+    return listHead
+}
+
+console.log(deleteDupes(LinkedList.makeSinglyLinkedList([1, 2, 2, 3, 3, 4, 5])).toString())
