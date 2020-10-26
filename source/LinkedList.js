@@ -1,42 +1,42 @@
 class LinkedList {
     constructor(head) {
-        this.head = head;
+        this.head = head
     }
 
     length() {
-        let length = 0;
-        let node = this.head;
+        let length = 0
+        let node = this.head
         while (node != undefined) {
-            length++;
-            node = node.child;
+            length++
+            node = node.child
         }
-        return length;
+        return length
     }
 
     static traverse(head) {
-        let node = head;
-        let array = [];
+        let node = head
+        let array = []
         while (node !== undefined) {
-            array.push(node.value);
-            node = node.next;
+            array.push(node.value)
+            node = node.next
         }
-        return array;
+        return array
     }
 
     static makeSinglyLinkedList(values) {
-        let head = new Node(values[0]);
+        let head = new Node(values[0])
 
-        let current = head;
+        let current = head
         for (let i = 1; i < values.length; i++) {
-            let next = new Node(values[i]);
-            current.next = next;
+            let next = new Node(values[i])
+            current.next = next
             current = next
         }
 
-        return head;
+        return head
     }
 
-    static makeDoublyLinkedList(values) { 
+    static makeDoublyLinkedList(values) {
         let head = new Node(values[0])
 
         let current = head
@@ -47,25 +47,25 @@ class LinkedList {
             current = next
         }
 
-        return head;
+        return head
     }
 
     static toString(head) {
-        return LinkedList.traverse(head).join(" -> ");
+        return LinkedList.traverse(head).join(" -> ")
     }
 }
 
 class Node {
     constructor(value, prev, next) {
-        this.value = value;
-        this.prev = prev;
-        this.next = next;
+        this.value = value
+        this.prev = prev
+        this.next = next
     }
 
     toString() {
-        return LinkedList.traverse(this).join(" -> ");
+        return LinkedList.traverse(this).join(" -> ")
     }
 }
 
-exports.LinkedList = LinkedList;
-exports.Node = Node;
+exports.LinkedList = LinkedList
+exports.Node = Node

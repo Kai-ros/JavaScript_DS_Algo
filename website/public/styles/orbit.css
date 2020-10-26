@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Classes */
+
+.satellites {
+    position: absolute;
+    padding: 2.5em;
+    border: .1em solid #000;
+    border-radius: 50%;
+    /* background: lightblue; */
+}
+
+.spokes {
+    width: 5em;
+    height: 5em;
+}
+
+/* IDs */
+
+#system {
+    position: relative;
+    text-align: center;
+    padding: 5em;
+}
+
+#hub {
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    padding: 10em;
+    border: .1em solid #000;
+    border-radius: 50%;
+    /* background: lightblue; */
+}
+
+#orb1 {
+    top: 5vh;
+    left: 48vw;
+}
+
+#orb2 {
+    top: 29vh;
+    left: 62vw;
+}
+
+#orb3 {
+    top: 68vh;
+    left: 62vw;
+}
+
+#orb4 {
+    top: 92vh;
+    left: 48vw;
+}
+
+#orb5 {
+    top: 92vh;
+    left: 28vw;
+}
+
+#orb6 {
+    top: 68vh;
+    left: 14vw;
+}
+
+#orb7 {
+    top: 29vh;
+    left: 14vw;
+}
+
+#orb8 {
+    top: 5vh;
+    left: 28vw;
+}
+
+#spoke1 {
+    
+}
+

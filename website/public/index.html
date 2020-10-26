@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>TEST OUTPUT</title>
-		<script src="https://unpkg.com/vue@3.0.1/dist/vue.global.jprod.js"></script>
+		<script src="https://unpkg.com/vue@3.0.1/dist/vue.global.jprod.js" defer></script>
 		<!-- <script src="https://unpkg.com/vue@next"></script> -->
 		<script src="./App.vue" defer></script>
 		<script src="./scripts/mergesort.js" defer>// <-- this defer necessary</script>
@@ -13,6 +13,7 @@
 	<body>
 		<!-- <div id="app">{{ message }}</div> -->
 		<h1>Workshop</h1>
+        <h2><a href="./orbit.html">ORBIT</a></h2>
 		<div class="list-box" id="drinks-box">
 			<ul class="DrinksList"> DRINKS LIST
 				<li id="Coffee">Coffee</li>
@@ -39,6 +40,7 @@
 				<li id="Mangos">Mangos</li>
 			</ul>
 		</div>
+		<input id="input" type="text" />
 		<a href="https://www.dictionary.com/browse/leave">You're leaving us...</a>
 		<img src="https://i.kym-cdn.com/entries/icons/original/000/000/056/itsover1000.jpg" alt="Vegeta" width="1000" height="700">
 	</body>

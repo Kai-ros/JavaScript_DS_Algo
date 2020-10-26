@@ -10,6 +10,11 @@ function turn5thLiBlue() {
     fifthLi.style.color = "blue"
 }
 
+function betterGetList() {
+    const foodList = document.querySelectorAll('#FoodsList li')
+    console.log(foodList)
+}
+
 function bespokeSortList() {
     let list = document.getElementsByClassName("FoodsList")[0]
     let nodes = Array.from(list.children)
@@ -64,6 +69,7 @@ turnCoffeeRed()
 bespokeSortList()
 builtInSortList()
 turn5thLiBlue()
+betterGetList()
 
 
 // Vue App

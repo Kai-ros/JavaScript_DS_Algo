@@ -45,8 +45,8 @@ function makeNodeListHead(linkedList, target) {
 exports.makeNodeListHead = makeNodeListHead
 
 function handicappedListIntersection(list1, list2) {
-    let intersectionRoot = undefined;
-    let currentForIntersection = undefined;
+    let intersectionRoot = undefined
+    let currentForIntersection = undefined
     let current1 = list1.head
     let current2 = list2.head
 
@@ -88,7 +88,7 @@ function deleteDupes(listHead) {
                 current.next.prev = current
             }
         } else {
-            current = next;
+            current = next
         }
     }
     return listHead
